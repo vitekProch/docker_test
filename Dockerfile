@@ -27,4 +27,3 @@ RUN npm install
 CMD ["npm", "run", "watch"]
 
 
-FROM mysql/mysql-server:8.0
