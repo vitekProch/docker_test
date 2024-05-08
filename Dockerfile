@@ -17,9 +17,5 @@ COPY ./php.ini /usr/local/etc/php/php.ini
 # Znovu nainstalovat rozšíření pdo_mysql, protože toto rozšíření musí být nainstalováno po nastavení php.ini
 RUN docker-php-ext-install pdo_mysql
 
-FROM nginx:1.25.4
-COPY nginx/symfony.conf /etc/nginx/conf.d/default.conf
-
-
 
 
