@@ -11,8 +11,6 @@ RUN apt-get update && apt-get install -y zlib1g-dev g++ git libicu-dev zip libzi
 # Nainstalovat Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Nastavení vlastního php.ini
-COPY ./php.ini /usr/local/etc/php/php.ini
 
 # Znovu nainstalovat rozšíření pdo_mysql, protože toto rozšíření musí být nainstalováno po nastavení php.ini
 RUN docker-php-ext-install pdo_mysql
