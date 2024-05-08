@@ -20,10 +20,6 @@ RUN docker-php-ext-install pdo_mysql
 FROM nginx:1.25.4
 COPY nginx/symfony.conf /etc/nginx/conf.d/default.conf
 
-FROM node:14
-WORKDIR /var/www/html
-COPY package*.json ./
-RUN npm install
-CMD ["npm", "run", "watch"]
+
 
 
