@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block title %} Obchodní podmínky | {{ parent() }}{% endblock %}
+{% block body %}
+<section class="business-conditions-page page-header-margin">
+    <div class="business-conditions-title">
+        <h1 class="photo-info-font">{{ title }}</h1>
+    </div>
+    <div class="business-conditions-content">
+        <h4>Objednávka termínu:</h4>
+        <ul>
+            <li>Objednat si svůj termín na focení lze zde vyplněním formuláře v kategorii <a class="text-link" href="{{ path('contact_page') }}">kontakt</a>. Můžete mě ale také kontaktovat do zprávy na sociálních sítích, jako je <a class="text-link" href="https://www.facebook.com/Fotografieodhanky" target="_blank" rel="noopener noreferrer">Facebook</a>  nebo <a class="text-link" href="https://www.instagram.com/fotografie_od_hanky/" target="_blank" rel="noopener noreferrer">Instagram</a>.</li>
+            <li>Objednávkou termínu vyjadřujete souhlas s těmito obchodními podmínkami a akceptujete můj autorský přístup a fotografický styl.</li>
+            <li>V případě nepříznivého počasí či nemoci z vaší nebo mojí strany, je termín přesunut na nejbližší volný termín.</li>
+        </ul>
+        <h4>Ceny focení a splatnost:</h4>
+        <ul>
+            <li>Ceny balíčků najdete v kategorii <Link class="" to="/cenik">Ceník</Link>.</li>
+            <li>Po objednání termínu je nutné uhradit rezervační zálohu. O její přesné výši vás budu předem informovat.</li>
+            <li>Jestliže se klient na focení nedostaví, a to bez jakékoli omluvy, rezervační záloha propadá.</li>
+            <li>Splatnost balíčku nastává poté, co si na základě náhledů vyberete fotografie, o které máte zájem.</li>
+            <li>Větší zásahy do fotografií dle vašeho přání budou individuálně naceněny.</li>
+        </ul>
+        <h4>Výběr fotografií:</h4>
+        <ul>
+            <li>Po focení zasílám neupravené náhledy fotografií online. Počet náhledů se liší a je individuální dle délky focení a dalších podmínek během focení.</li>
+            <li>Na výběr budete mít dostatek času.</li>
+            <li>Hned po přijetí výběru od vás se pouštím do úprav.</li>
+            <li>U svatebního focení fotografie k úpravě vybírám sama.</li>
+        </ul>
+        <h4>Termín zhotovení a dodání fotografií:</h4>
+        <ul>
+            <li>Ateliérové i exteriérové fotografie zpracuji a elektronicky zašlu do 5 pracovních dnů od přijetí vašeho výběru.</li>
+            <li>Svatební zakázka trvá přibližně 2-3 týdny od vašeho svatebního dne.</li>
+            <li>Firemní akce se individuálně liší dle počtu fotografií.</li>
+            <li>Fotografie pro školky/školy se opět individuálně liší dle počtu tříd apod.</li>
+        </ul>
+        <h4>Formát a předání fotografií:</h4>
+        <ul>
+            <li>Upravené a přirozeně retušované fotografie zasílám elektronicky ve formátu JPEG prostřednictvím Úschovny.</li>
+            <li>Svatební fotografie zasílám také elektronicky ve formátu JPEG prostřednictvím Úschovny. Všechny fotografie ale ode mě obdržíte i na flash disku.</li>
+            <li>Neupravené fotografie neposkytuji!</li>
+        </ul>
+        <h4>Archivace fotografií:</h4>
+        <ul>
+            <li>Vaše fotografie u mě budou uchovány minimálně po dobu 6 měsíců. I tak doporučuji je po stažení ihned zálohovat a uložit na bezpečné místo.</li>
+        </ul>
+        <h4>Dárkové poukazy:</h4>
+        <ul>
+            <li>Dárkové poukazy lze zakoupit po celý rok k různým příležitostem, jako jsou narozeniny, Vánoce, výročí...</li>
+            <li>Každý poukaz má platnost 1 rok od zakoupení.</li>
+        </ul>
+        <h4>Jiná ujednání:</h4>
+        <ul>
+            <li>Zákazník nabývá k zakoupeným fotografiím vlastnická práva, nikoli práva autorská, která náleží pouze fotografovi. Fotografie tudíž nesmí být použity pro jakékoli komerční účely, propagaci či prodej třetí straně bez písemného souhlasu autora. Fotografované osoby mohou používat fotografie pro svou nekomerční osobní prezentaci.</li>
+            <li>Dle autorského zákona, není bez souhlasu autora dovoleno, hotové fotografie jakkoliv upravovat (např. použití barevných filtrů na instagramu) a zveřejňovat jako dílo autora.</li>
+            <li>Vyhrazuji si právo ke zveřejnění fotografií ve svém portfoliu na sociálních sítích, na svých webových stránkách, příp. dalších propagačních materiálech. Pokud si nepřejete, aby vaše fotografie byly zveřejněny, je nutné mě o tom předem informovat. Pokud tak neučiníte, má se za to, že s případným zveřejněním souhlasíte. Máte samozřejmě právo dodatečně požadovat odstranění fotografií z portfolia.</li>
+        </ul>
+    </div>
+</section>
+    
+{% endblock %}

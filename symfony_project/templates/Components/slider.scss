@@ -1,0 +1,40 @@
+.swiper.categories-slider{
+  width: 100%;
+  height: 100%;
+  .tests{
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px!important;
+    color: #000;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 90%;
+  }
+}
+
+.swiper.review-slider {
+  width: 50%;
+  height: 100%;
+
+  .swiper-slide img {
+    object-fit: contain;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

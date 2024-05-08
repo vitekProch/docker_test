@@ -1,0 +1,113 @@
+@import '~/assets/styles/helper/variables.scss';
+.contact-page {
+  #map{
+    height: 100%;
+  }
+  .contact-container {
+    display: block;
+    background-color: #fff;
+    box-shadow: 1px 2px 13px 0 rgba(0,0,0,.58);
+    padding: 10px;
+    max-width: 500px;
+    margin: 2.5rem auto;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-textarea {
+    min-height: 100px;
+    max-height: 200px;
+  }
+
+  .contact-form-container {
+    width: 100%;
+  }
+  .contact-link-with-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-column-background {
+    background-color: $first_color;
+  }
+
+  .contact-social-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .fa-facebook-size {
+    font-size: 2.3em;
+    color: #0a0a0a;
+  transition: 0.3s ease-in-out;
+    &:hover {
+      color: #0d6efd;
+    }
+  }
+
+
+  .instagram-link {
+    color: #0a0a0a;
+    position: relative;
+    display: inline-block;
+    font-size: 2.5em;
+
+    .inner {
+      background: #fcfcfc;
+      mix-blend-mode: screen;
+      display: block;
+      width: 43.75px;
+    }
+
+    .bg {
+      background: #000;
+
+      &::before {
+        content: "";
+        background: linear-gradient(
+                        45deg,
+                        #f09433 0%,
+                        #e6683c 25%,
+                        #dc2743 50%,
+                        #cc2366 75%,
+                        #bc1888 100%
+        );
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+      }
+    }
+
+    &:hover .bg::before {
+      opacity: 1;
+    }
+
+  }
+
+  .send-email-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 20px;
+  }
+}
+

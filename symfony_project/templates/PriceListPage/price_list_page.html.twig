@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+{% block title %} Ceník | {{ parent() }}{% endblock %}
+{% block body %}
+<section>
+    <div class="price-list-page">
+        <h1>{{ title }}</h1>
+        <div class="container price-article-list">
+            {% for weddingPackage in weddingPackages %}
+                <div class="row justify-content-center">
+                    <div data-controller="priceDropdown" data-value="{{weddingPackage.id}}" class="row price-dropdown-header align-items-center">
+                        <div class="col pt-2"><h2>{{ weddingPackage.name }}</h2></div>
+                        <div class="col">
+                            <div class="price-list-signs float-end">
+                                <div class="sign-bar"></div>
+                                <div class="sign-bar"></div>
+                                <div class="sign-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <article style="display: none;" class="row price-dropdown gap-1 p-0" id="priceDropdownId-{{weddingPackage.id}}">
+                        {% for price in weddingPackage.weddingPackage %}
+                            <div class="col-md wedding-price-background">
+                                <div class="package d-flex flex-column h-100">
+                                    <h5 class="text-center mt-3">{{ price.name }}</h5>
+                                    <ul class="p-0">
+                                        {% for items in price.items %}
+                                            <li class="wedding-price-item">
+                                                <p>{{ items.name }}</p>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <div class="mt-auto pt-3 text-end price-amount">{{ price.price |format_currency('CZK', {fraction_digit: 0}, locale='cs_CZ') }}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </article>
+                </div>
+            {% endfor %}
+            {% for priceList in smallPriceList %}
+                <div class="row justify-content-center">
+                    <div data-controller="priceDropdown" data-value="{{priceList.id}}" class="row price-dropdown-header pt-1 align-items-center">
+                        <div class="col pt-2"><h2>{{ priceList.PhotoPackageTitle }}</h2></div>
+                        <div class="col">
+                            <div class="price-list-signs float-end">
+                                <div class="sign-bar"></div>
+                                <div class="sign-bar"></div>
+                                <div class="sign-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <article id="priceDropdownId-{{priceList.id}}" class="price-dropdown hidden">
+                        {% for price in priceList.photoPackageDetails %}
+                        <div class="row price-row">
+                            <div class="col">
+                                <p>{{ price.PhotoPackageDetailTitle }}</p>
+                            </div>
+
+                            <div class="col text-center">
+                                <p>{{ price.PhotoPackageDetailPhotoAmount }} Ks</p>
+                            </div>
+
+                            <div class="col text-end">
+                                <p class="price-amount"> {{ price.PhotoPackageDetailPrice |format_currency('CZK', {fraction_digit: 0}, locale='cs_CZ') }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="row price-row">
+                            <div class="col">
+                                <p>Cesta do Prahy</p>
+                            </div>
+                            <div class="col text-end">
+                                <p class="price-amount">+ 340 Kč</p>
+                            </div>
+                        </div>
+                        <div class="row price-row">
+                            <div class="col">
+                                <p>Příplatek za víkend</p>
+                            </div>
+                            <div class="col text-end">
+                                <p class="price-amount">+ 300 Kč</p>
+                            </div>
+                        </div>
+                        <div class="row price-row">
+                            <div class="col">
+                                <p>Fotka nad rámec balíčku</p>
+                            </div>
+                            <div class="col text-end">
+                                <p class="price-amount">+ 150 Kč</p>
+                            </div>
+                        </div>
+                        <div class="row price-row">
+                            <div class="col">
+                                <p>Možnost tvorby individuálních balíčků s vícero fotkama.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

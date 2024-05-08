@@ -1,0 +1,19 @@
+footer {
+    display: block;
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 3em;
+    grid-column: 1/-1;
+    margin-top: auto;
+    z-index: 100;
+
+    .footer-name{
+        font-family: 'DM Serif Display', serif;
+    }
+    @media only screen and (max-width: 470px) {
+        .footer-name{
+            font-size: 6vw;
+        }
+    }
+}

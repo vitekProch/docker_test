@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block title %} Portfólio | {{ parent() }}{% endblock %}
+{% block body %}
+<section class="portfolio-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-auto bg-light sticky-top">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto justify-content-between w-100 ">
+                        {% for category in categories %}
+                            <li class="nav-item">
+                                <a class="nav-link py-3 px-2" href="{{ path('portfolio_page', { slug: category.getSlug}) }}">
+                                    <i class="{{ category.getFontAwesomeIcon }} fa-lg" title="{{ category.getCategoryName }}"></i>
+                                    <span class="fs-5 d-none d-md-inline">{{ category.getCategoryName }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm p-3 min-vh-100">
+                {% if not slug %}
+                    <div class="container">
+                        <div class="row">
+                            {% for category in categories %}
+                                <div class="col-md-6 col-xl-4 p-1">
+                                    <a href="{{ slug ? '#' : path('portfolio_page', { slug: category.getSlug}) }} " class="thumbnail">
+                                        <div class="category_image">
+                                            <img class="img img-responsive full-width" src="{{ asset(category.getCategoryPhotoPath ) }}" alt="{{ category.getCategoryName }}" />
+                                            <div class="portfolio-overlay">{{ category.getCategoryName }}</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                <section class="gallery">
+                    <ul class="images"  data-controller="lightbox">
+                        {% for portfolio in portfolioPhoto %}
+                        <a href="{{ asset(portfolio.getPortfolioPhotoPath ) }}">
+                            <li class="card">
+                                <img src="{{ asset(portfolio.getPortfolioPhotoPath ) }}" alt="{{ portfolio.getPortfolioAlt }}" alt="img">
+                            </li>
+                        </a>
+                        {% endfor %}
+                    </ul>
+                </section>
+                 {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

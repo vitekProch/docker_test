@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h4{
+    font-family: 'League Gothic', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style:none;
+}
+.content {
+    margin-top: 81px;
+}
+.content.without-nav-margin{
+    margin-top: 0;
+}
+
+.text-link {
+    text-decoration: none;
+    border-bottom: 3px solid #ffcb3a;
+    color: black;
+    font-weight: 600;
+}

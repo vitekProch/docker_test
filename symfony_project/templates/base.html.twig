@@ -1,0 +1,42 @@
+{% set current_route = app.request.attributes.get('_route') %}
+{% set current_route_from_query_params = app.request.query.get('currentRoute') %}
+
+{% set active_route = null %}
+{% if current_route == 'homepage' or current_route_from_query_params == 'homepage' %}
+    {% set active_route = 'homepage' %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Hanna Web{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Old+Standard+TT&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Wix+Madefor+Text&display=swap" rel="stylesheet">
+
+        <!--Swiper slider css-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/cc8953f9e5.js" crossorigin="anonymous"></script>
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    {% include 'header.html.twig' %}
+    
+    <body>
+        <main class="content {% if active_route == 'homepage' %}without-nav-margin{% endif %}">
+            {% block body %}{% endblock %}
+        </main>
+    </body>
+    {% include 'footer.html.twig' %}
+</html>

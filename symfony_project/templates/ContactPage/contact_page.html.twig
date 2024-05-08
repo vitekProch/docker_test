@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block title %} Kontakt | {{ parent() }}{% endblock %}
+{% block body %}
+
+<section class="contact-page" data-controller="contactMap">
+    <div class="container-fluid">
+        <div class="row flex-wrap-reverse">
+            <div class="col-lg-5 p-0 map">
+                <div id="map"></div>
+            </div>
+            <div class="col-lg-7 text-center contact-column-background">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success mt-5">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                <div class="contact-container">
+                    <div class="contact">
+                        <div class="contact-title">
+                            <h1 class="text-center">Kontakt</h1>
+                        </div>
+                        <div class="contact-inf-box">
+                            <div class="adress">
+                                <strong>
+                                    Smetanova 49<br />
+                                    337 01 Rokycany - Střed<br />
+                                     Česko<br />
+                                </strong>
+                                <a class="text-link" href="mailto:fotografieodhanky@seznam.cz"><strong>fotografieodhanky@seznam.cz</strong></a>
+                                <p>IČO: <strong>00000000</strong></p>
+                            </div>
+                        </div>
+                        <div class="contact-form-container">
+                            {{ form_start(contactForm) }}
+                            {{ form_widget(contactForm, {
+                                "attr" : {"class": "contact-form"}
+                            }) }}
+                            <div class="contact-link-with-button">
+                                <div class="contact-social-links">
+                                    <a href="https://www.facebook.com/Fotografieodhanky" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook fa-facebook-size"></i></a>
+                                    <a class="instagram-link" href="https://instagram.com/" target="_instagram" aria-label="A great place to find out what friends are up to!">
+                                        <div class="bg">
+                                            <div class="inner">
+                                                <i class="fab fa-instagram"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <button type="submit" class="send-email-btn">Odeslat</button>
+                            </div>
+                            {{ form_end(contactForm) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

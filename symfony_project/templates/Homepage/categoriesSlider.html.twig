@@ -1,0 +1,15 @@
+<div class="swiper categories-slider">
+    {% use "Components/slider.html.twig" %}
+    {% block slideContent %}
+        <div class="swiper-wrapper">
+                {% for category in categories %}
+                <div class="swiper-slide">
+                        <img src="{{ asset(category.categoryPhotoPath ) }}" alt="{{ category.categoryName }}">
+                        <a class="tests" href="#">{{ category.categoryName }}</a>
+                </div>
+                {% endfor %}
+        </div>
+    {% endblock %}
+    {% block slidePagination %} {{ parent() }} {% endblock %}
+    {% block slideNavigation %} {{ parent() }} {% endblock %}
+</div>

@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+{% block body%}
+<div class="homepage" data-controller="homepage">
+    <section class="hero-section">
+      <div class="container-fluid">
+        <div class="row hero-row">
+            <div class="col col-sm-4">
+                <div class="img-fluide hero-img-1"></div>
+            </div>
+            <div class="col">
+                <div class="img-fluide hero-img-2"></div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="opening-text-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+              <h2 class="text-center">O mně</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="opening-text-image">
+            <img src="{{ asset('/images/homepageImages/uvodni_foto_hanka.jpg') }}" alt="" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="opening-text">
+            <div class="opening-text-container">
+              <p><strong class="fotograf-name">BcA. Hana Jedličková</strong></p>
+              <p>Vítám tě na svých stránkách. Líbí se ti moje práce a chceš také takové fotografie? Mrkni na to, kdo tě bude fotit.</p>
+              <p><em>Kdo jsem?</em><br />Jmenuji se Hana Jedličková a v oboru fotografie se pohybuji už od dětství. Vše začalo, už když mi bylo 11 let a já dostala svůj první fotoaparát. Od té doby se fotografie stala moji životní cestou. Není to pro mě pouze koníček či práce. Je to dalo by se říci můj životní směr, ve kterém jsem se rozhodla zdokonalovat a vložit do toho kus sebe. Své znalosti v oboru jsem rozvíjela jak na střední, tak i na vysoké škole.</p>
+              <p class="home-page-about-me-link"><a href="/o-mne">Čti dále...</a></p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <section class="reaction">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 text-center">
+            {% include './Homepage/reviewSlider.html.twig' %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 text-center">
+            {% include './Homepage/categoriesSlider.html.twig' %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="social-sites-section">
+        <div class="social-sites-title">
+            <h2 class="home-page-titles">Sleduj mě na sociálních sítích</h2>
+        </div>
+        <div class="social-site">
+            <div class="social-site-img"
+                 style="
+                 background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_1.jpg);
+                 background-size: cover;
+                 background-position: center;
+                ">
+                <div class="overlay">
+                    <div class="social-site-links">
+                        <a href="https://www.facebook.com/Fotografieodhanky" target="_blank" rel="noopener noreferrer">FACEBOOK</a>
+                        <a href="https://www.instagram.com/fotografie_od_hanky/" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+                    </div>
+                </div>
+            </div>
+            <div class="social-site-img"
+                 style="
+                     background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_2.jpg);
+                     background-size: cover;
+                     background-position: center;
+                    ">
+            </div>
+            <div class="social-site-img"
+                 style="
+                         background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_3.jpg);
+                         background-size: cover;
+                         background-position: center;
+                        ">
+            </div>
+            <div class="social-site-img"
+                 style="
+                         background-image: url(https://good-puce-llama-yoke.cyclic.app/images/social_media_4.jpg);
+                         background-size: cover;
+                         background-position: center;
+                        ">
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}

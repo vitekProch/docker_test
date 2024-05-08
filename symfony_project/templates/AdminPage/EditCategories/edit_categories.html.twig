@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %} Categories | {{ parent() }}{% endblock %}
+{% block body %}
+<section class="about-me">
+<h1>Categories</h1>
+{% for category in categories %}
+
+{{ category.id }}
+{{ category.categoryName }}
+{{ category.categoryPhotoPath }}
+<br>
+
+{% endfor %}
+</section>
+    
+{% endblock %}

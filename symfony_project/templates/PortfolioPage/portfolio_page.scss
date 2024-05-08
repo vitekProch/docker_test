@@ -1,0 +1,127 @@
+@import '~lightgallery/scss/lightgallery';
+.portfolio-page{
+  .portfolio-nav{
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+    position: fixed;
+    z-index: 2;
+    top: 145px;
+  }
+
+  .portfolio-nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: end;
+  }
+
+  .category-list-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .portfolio-nav-links li a{
+    color: black;
+    text-decoration: underline #fdd154;
+    font-size: 1.5rem !important;
+    transition: 0.3s linear;
+
+    &:hover{
+      color: #ffcb3a;
+      text-decoration: underline black;
+    }
+  }
+
+  .sticky-top {
+    top: 81px;
+  }
+}
+
+.portfolio-gallery-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 3%;
+}
+.category_image{
+  position:relative;
+  overflow:hidden;
+  padding-bottom:100%;
+}
+.category_image img{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.portfolio-overlay {
+  margin: 0 !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fdd154;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: 'League Gothic', sans-serif;
+  font-size: 1.8rem;
+}
+
+.category_image:hover img {
+  filter: brightness(40%);
+}
+
+.category_image:hover .portfolio-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+
+
+
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery .images {
+  gap: 15px;
+  max-width: 95%;
+  margin-top: 40px;
+  columns: 5 340px;
+  list-style: none;
+}
+
+.gallery .images .card {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: 4px;
+}
+
+.gallery .images img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+@media screen and (max-width: 688px){
+  .gallery .images {
+      max-width: 100%;
+      padding: 0 13px;
+      margin-top: 20px;
+  }
+}

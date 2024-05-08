@@ -1,0 +1,12 @@
+<footer>
+    <p class="display-5 mb-3 footer-name">FOTOGRAFIE OD HANKY</p>
+    <li class="nav-item">
+        <a class="nav-link" href="/{{app.user ? 'logout' : 'login'}}">{{app.user ? 'logout' : 'login'}}</a>
+    </li>
+    {% if  is_granted('ROLE_ADMIN') %}
+        <li class="nav-item">
+            <a data-turbo="false" class="nav-link" href="{{ path('admin') }}">Administrace</a>
+        </li>
+    {% endif %}
+    <small class="text-white-50">&copy; Copyrigt by Hana. All right reserved.</small>
+</footer>

@@ -1,0 +1,25 @@
+.business-conditions-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.business-conditions-page h4 {
+  border-bottom: 3px solid #ffcb3a;
+  display: inline-block;
+  font-family: 'League Gothic', sans-serif;
+  font-size: 2rem;
+}
+
+.business-conditions-title {
+  text-align: center;
+}
+
+.business-conditions-content {
+  width: 65%;
+}
+
+.business-conditions-content  ul li {
+  list-style: disc;
+}

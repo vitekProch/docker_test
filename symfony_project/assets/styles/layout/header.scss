@@ -1,0 +1,119 @@
+header {
+    .navbar{
+        transition: background-color 1s ease;
+
+    }
+    .nav-link {
+        color: rgba(0, 0, 0, 0.55);
+        margin-right: 10px;
+        position: relative;
+        font-size: 23px;
+        transition: 0.1s ease;
+    }
+    #navbarNav{
+        flex-grow: 0;
+    }
+    #brand {
+        text-decoration: none;
+        font-size: 39px;
+        color: black;
+        font-family: 'DM Serif Display', serif;
+    }
+    #brand:hover {
+        color: #ffcb3a;
+    }
+    .dropdown-menu{
+        left: -175px !important;
+    }
+
+    .dropdown-item, .dropdown-item:active {
+        background-color: transparent !important;
+    }
+
+
+    .bar{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: black;
+    }
+
+
+    .nav-link:before, a:after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 0;
+        background: black;
+        transition: .5s;
+    }
+    .nav-link:after {
+        left: 0;
+        bottom: -1px;
+    }
+
+    .nav-link:hover:after{
+        width: 100%;
+    }
+    .nav-link:hover{
+        color: black;
+    }
+
+    nav ul li .active:after{
+        content: "";
+        position: absolute;
+        height: 3px;
+
+        width: 100%;
+        background: black;
+        transition: .5s;
+    }
+    nav ul li .active{
+        color: black;
+    }
+
+    .hamburger.navbar-toggler{
+        overflow: hidden;
+    }
+    .hamburger.navbar-toggler .bar:nth-child(2){
+        transform: translateX(60px);
+    }
+    .hamburger.navbar-toggler .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.navbar-toggler .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hamburger.navbar-toggler.collapsed .bar:nth-child(2){
+        transform: translateX(0px);
+    }
+    .hamburger.navbar-toggler.collapsed .bar:nth-child(1){
+        transform: translateY(0px);
+    }
+    .hamburger.navbar-toggler.collapsed .bar:nth-child(3){
+        transform: translateY(0px);
+    }
+    #brand img{
+        display: none !important;
+    }
+    @media only screen and (max-width: 1245px){
+        #brand {
+            font-size: 30px;
+        }
+        .nav-link {
+            font-size: 18px;
+        }
+    }
+
+    @media only screen and (max-width: 1130px){
+        #brand span{
+            display: none;
+        }
+        #brand img{
+            display: block !important;
+        }
+    }
+}
